@@ -20,6 +20,12 @@ jobs:
        registry: registry-1.docker.io
        username: ${{secrets.DOCKERHUBUSERNAME}}
        password: ${{secrets.DOCKERHUBPASSWORD}}
+    - name: Docker Pull
+      run: docker pull hello-world
+    - name: Docker Tag
+      run: docker tag hello-world snsaisrinivas/hello-world
+    - name: Docker Push
+      run: docker push snsaisrinivas/hello-world
   Logintodockerhubs:
     runs-on: ubuntu-latest
     environment: Dev
@@ -31,3 +37,9 @@ jobs:
        registry: registry-1.docker.io
        username: ${{secrets.DOCKERHUBUSERNAME}}
        password: ${{secrets.DOCKERHUBPASSWORD}}
+    - name: Docker Pull
+      run: docker pull hello-world
+    - name: Docker Tag
+      run: docker tag hello-world snsaisrinivas/hello-world
+    - name: Docker Push
+      run: docker push snsaisrinivas/hello-world
